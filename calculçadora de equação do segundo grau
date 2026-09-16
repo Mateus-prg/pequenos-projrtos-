@@ -1,0 +1,56 @@
+import java.util.Scanner;
+
+public class EquacaoSegundoGrau {
+    public static void main(String[] args) {
+
+        Scanner scanner = new Scanner(System.in);
+
+        double a, b, c;
+        double delta, x1, x2;
+
+        System.out.println("=== CALCULADORA DE EQUAÇÃO DO 2º GRAU ===");
+
+        System.out.print("Digite o valor de A: ");
+        a = scanner.nextDouble();
+
+        System.out.print("Digite o valor de B: ");
+        b = scanner.nextDouble();
+
+        System.out.print("Digite o valor de C: ");
+        c = scanner.nextDouble();
+
+        // Verifica se realmente é uma equação do segundo grau
+        if (a == 0) {
+            System.out.println("O valor de A não pode ser 0.");
+        } else {
+
+            // Calculando o Delta
+            delta = (b * b) - (4 * a * c);
+
+            System.out.println("\nDelta = " + delta);
+
+            if (delta > 0) {
+
+                x1 = (-b + Math.sqrt(delta)) / (2 * a);
+                x2 = (-b - Math.sqrt(delta)) / (2 * a);
+
+                System.out.println("A equação possui duas raízes reais.");
+                System.out.println("X1 = " + x1);
+                System.out.println("X2 = " + x2);
+
+            } else if (delta == 0) {
+
+                x1 = -b / (2 * a);
+
+                System.out.println("A equação possui uma raiz real.");
+                System.out.println("X = " + x1);
+
+            } else {
+
+                System.out.println("A equação não possui raízes reais.");
+            }
+        }
+
+        scanner.close();
+    }
+}
